@@ -19,12 +19,11 @@ int main(int argc, char *argv[])
     serverAddress.sin_port = htons(5000);
     serverAddress.sin_addr.s_addr = htonl(INADDR_ANY);
     bind(listenfd, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
-    
+    /*
     inet_ntop(AF_INET, (struct sockaddr*)&serverAddress, IP, sizeof(serverAddress));
     printf("%s\n", IP);
-
+    */
     listen(listenfd, 1);
-
     int num = 0;
     while(1)
     {
