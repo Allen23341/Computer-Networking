@@ -21,11 +21,10 @@ int main(int argc, char *argv[])
     printf("==================\n");
 
     inet_pton(AF_INET, argv[1], &serverAddress.sin_addr);
-    
-    printf("==================\n");
-
-
     connect(sockfd, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
+
+    printf("==================\n");
+        
     bzero(buffer, sizeof(buffer));
     read(sockfd, buffer, sizeof(buffer));
     printf("%s", buffer);
